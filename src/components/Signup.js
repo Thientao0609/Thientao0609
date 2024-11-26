@@ -1,25 +1,38 @@
-// components/SignUp.js
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const SignUp = ({ handleSignUp }) => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Mật khẩu xác nhận không khớp!");
+      setErrorMessage("Mật khẩu xác nhận không khớp!");
       return;
     }
 
-    handleSignUp(email, password);
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const existingUser = users.find((user) => user.email === email);
+
+    if (existingUser) {
+      setErrorMessage("Email đã tồn tại!");
+      return;
+    }
+
+    users.push({ email, password });
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Đăng ký thành công!");
+    navigate("/login");
   };
 
   return (
     <div className="signup-container">
-      <h2>Đăng ký tài khoản</h2>
+      <h2>Tạo tài khoản</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email</label>
@@ -48,10 +61,14 @@ const SignUp = ({ handleSignUp }) => {
             required
           />
         </div>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         <button type="submit">Đăng ký</button>
       </form>
+      <p>
+        Đã có tài khoản? <Link to="/login">Đăng nhập tại đây</Link>
+      </p>
     </div>
   );
 };
 
-export default SignUp;
+export default Signup;
