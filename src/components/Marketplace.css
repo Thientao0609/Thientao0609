@@ -1,108 +1,74 @@
-/* Trang Marketplace */
-.marketplace-page {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Header */
-  .marketplace-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .marketplace-header h1 {
-    font-size: 36px;
-    color: #1877f2;
-    margin-bottom: 10px;
-  }
-  
-  .marketplace-header p {
-    font-size: 18px;
-    color: #555;
-  }
-  
-  /* Danh sách sản phẩm */
-  .products-list {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  /* Mỗi sản phẩm */
-  .product-item {
-    background-color: white;
-    padding: 15px;
-    width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
-  
-  .product-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Ảnh sản phẩm */
-  .product-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  /* Thông tin sản phẩm */
-  .product-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  /* Tiêu đề sản phẩm */
-  .product-info h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Mô tả sản phẩm */
-  .product-description {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  /* Giá sản phẩm */
-  .product-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #1c1e21;
-  }
-  
-  /* Nút mua sản phẩm */
-  .buy-button {
-    background-color: #1877f2;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  /* Hover button */
-  .buy-button:hover {
-    background-color: #165e9a;
-  }
-  
+.marketplace-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 15px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-item {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-info h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.buy-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+.no-products {
+  text-align: center;
+  color: #999;
+  font-size: 18px;
+}

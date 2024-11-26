@@ -1,17 +1,3 @@
-// import React from "react";
-
-// function Friends() {
-//   return (
-//     <div>
-//       <h1>Friends</h1>
-//       <p>Connect with your friends here!</p>
-//     </div>
-//   );
-// }
-
-// export default Friends;
-
-
 import React, { useState } from "react";
 import "./Friends.css";
 
@@ -25,27 +11,45 @@ function Friends() {
     { id: 5, name: "Sara Williams", profilePic: "https://randomuser.me/api/portraits/women/3.jpg" },
   ]);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Lọc danh sách bạn bè dựa trên tên
+  const filteredFriends = friends.filter((friend) =>
+    friend.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="friends-page">
       <header className="friends-header">
         <h1>Friends</h1>
         <p>Find and connect with your friends.</p>
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search friends..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </header>
 
       <div className="friends-list">
-        {friends.map((friend) => (
-          <div key={friend.id} className="friend-item">
-            <img
-              src={friend.profilePic}
-              alt={friend.name}
-              className="friend-profile-pic"
-            />
-            <div className="friend-info">
-              <h2>{friend.name}</h2>
-              <button className="friend-button">Send Message</button>
+        {filteredFriends.length > 0 ? (
+          filteredFriends.map((friend) => (
+            <div key={friend.id} className="friend-item">
+              <img
+                src={friend.profilePic}
+                alt={friend.name}
+                className="friend-profile-pic"
+              />
+              <div className="friend-info">
+                <h2>{friend.name}</h2>
+                <button className="friend-button">Send Message</button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="no-friends">No friends found.</p>
+        )}
       </div>
     </div>
   );

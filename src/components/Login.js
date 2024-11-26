@@ -1,7 +1,6 @@
-// components/Login.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import './Login.css';  // Import CSS file riêng biệt cho trang Login
+import './Login.css';  // Import CSS file riêng biệt cho trang Login
 
 const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
@@ -36,9 +35,14 @@ const Login = ({ handleLogin }) => {
         </div>
         <button type="submit">Đăng nhập</button>
       </form>
-      <p>
-        Chưa có tài khoản? <Link to="/signup">Đăng ký tại đây</Link>
-      </p>
+      <div className="login-links">
+        <p>
+          Chưa có tài khoản? <Link to="/signup">Đăng ký tại đây</Link>
+        </p>
+        <p>
+          <Link to="/forgot-password">Quên mật khẩu?</Link>
+        </p>
+      </div>
     </div>
   );
 };
