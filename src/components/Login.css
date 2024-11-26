@@ -1,0 +1,111 @@
+/* Toàn bộ trang login */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container của trang đăng nhập */
+  .login-page {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Tiêu đề của form */
+  .login-page h1 {
+    font-size: 30px;
+    color: #1877f2;
+    margin-bottom: 20px;
+  }
+  
+  /* Form đăng nhập */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Các label */
+  label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Các trường input */
+  input {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Khi người dùng nhập vào input */
+  input:focus {
+    outline: none;
+    border-color: #1877f2;
+  }
+  
+  /* Nút đăng nhập */
+  button {
+    background-color: #1877f2;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  /* Hover nút đăng nhập */
+  button:hover {
+    background-color: #165e9a;
+  }
+  
+  /* Khi người dùng hoàn tất đăng nhập */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Phần dưới của form */
+  form > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Thông báo lỗi */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+  /* Link quên mật khẩu và đăng ký tài khoản */
+  .forgot-password {
+    font-size: 14px;
+    color: #1877f2;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
