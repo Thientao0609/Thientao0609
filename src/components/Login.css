@@ -1,111 +1,99 @@
-/* Toàn bộ trang login */
+/* Đảm bảo các phần tử được căn giữa */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;  /* Căn giữa theo chiều ngang */
+  align-items: center;  /* Căn giữa theo chiều dọc */
+  height: 100vh;  /* Đảm bảo chiếm hết chiều cao màn hình */
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  margin-top: 20px;
+  color: #555;
+  font-size: 14px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Đảm bảo phần đăng nhập không bị ảnh hưởng bởi các phần khác */
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%;
+    padding: 15px;
   }
-  
-  /* Container của trang đăng nhập */
-  .login-page {
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
+
+  .login-container h2 {
+    font-size: 20px;
   }
-  
-  /* Tiêu đề của form */
-  .login-page h1 {
-    font-size: 30px;
-    color: #1877f2;
-    margin-bottom: 20px;
-  }
-  
-  /* Form đăng nhập */
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  /* Các label */
-  label {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-  
-  /* Các trường input */
-  input {
-    padding: 12px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Khi người dùng nhập vào input */
-  input:focus {
-    outline: none;
-    border-color: #1877f2;
-  }
-  
-  /* Nút đăng nhập */
+
   button {
-    background-color: #1877f2;
-    color: white;
-    padding: 12px;
     font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
   }
-  
-  /* Hover nút đăng nhập */
-  button:hover {
-    background-color: #165e9a;
-  }
-  
-  /* Khi người dùng hoàn tất đăng nhập */
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  /* Phần dưới của form */
-  form > div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Thông báo lỗi */
-  .error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 10px;
-  }
-  
-  /* Link quên mật khẩu và đăng ký tài khoản */
-  .forgot-password {
-    font-size: 14px;
-    color: #1877f2;
-    text-decoration: none;
-    margin-top: 15px;
-    display: inline-block;
-  }
-  
-  .forgot-password:hover {
-    text-decoration: underline;
-  }
-  
+}

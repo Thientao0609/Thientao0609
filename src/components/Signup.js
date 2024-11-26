@@ -1,20 +1,25 @@
-// components/Login.js
+// components/SignUp.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-// import './Login.css';  // Import CSS file riêng biệt cho trang Login
 
-const Login = ({ handleLogin }) => {
+const SignUp = ({ handleSignUp }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(email, password);
+
+    if (password !== confirmPassword) {
+      alert("Mật khẩu xác nhận không khớp!");
+      return;
+    }
+
+    handleSignUp(email, password);
   };
 
   return (
-    <div className="login-container">
-      <h2>Đăng nhập</h2>
+    <div className="signup-container">
+      <h2>Đăng ký tài khoản</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email</label>
@@ -34,13 +39,19 @@ const Login = ({ handleLogin }) => {
             required
           />
         </div>
-        <button type="submit">Đăng nhập</button>
+        <div className="form-group">
+          <label>Xác nhận mật khẩu</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Đăng ký</button>
       </form>
-      <p>
-        Chưa có tài khoản? <Link to="/signup">Đăng ký tại đây</Link>
-      </p>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;
