@@ -6,6 +6,7 @@ import Events from "./components/Events";
 import Marketplace from "./components/Marketplace";
 import Gaming from "./components/Gaming";
 import Login from "./components/Login";
+import Messenger from "./components/Messenger"; // Import Messenger
 import "./App.css";
 
 function App() {
@@ -48,8 +49,7 @@ function App() {
             <Link to="/events" className="nav-link">Events</Link>
             <Link to="/marketplace" className="nav-link">Marketplace</Link>
             <Link to="/gaming" className="nav-link">Gaming</Link>
-            {/* <Link to="/gioithieu" className="nav-link">Gaming</Link> */}
-
+            <Link to="/messenger" className="nav-link">Messenger</Link> {/* Link đến Messenger */}
             <button onClick={handleLogout} className="nav-link logout-btn">Logout</button>
           </nav>
         )}
@@ -61,7 +61,7 @@ function App() {
           <Route path="/events" element={<ProtectedRoute element={<Events />} />} />
           <Route path="/marketplace" element={<ProtectedRoute element={<Marketplace />} />} />
           <Route path="/gaming" element={<ProtectedRoute element={<Gaming />} />} />
-          {/* <Route path="/gioithieu" element={<ProtectedRoute element={<Gioithieu />} />} /> */}
+          <Route path="/messenger" element={<ProtectedRoute element={<Messenger />} />} /> {/* Route cho Messenger */}
         </Routes>
       </div>
     </Router>
